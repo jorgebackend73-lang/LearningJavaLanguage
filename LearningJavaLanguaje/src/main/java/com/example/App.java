@@ -4,6 +4,9 @@ import java.time.LocalDate;
 import java.time.Month;
 
 public class App {
+	
+	public  String texto = "vivo en el plano de las instancias";
+	
     public static void main(String[] args) {
         
     /*
@@ -33,6 +36,15 @@ public class App {
     		.build();
     
     System.out.println(persona2);
+    
+    System.out.println("El pais de las personas es: " + Persona.PAIS); 
+    
+    //mostrar el valor de la variable texto
+    
+    //App app = new App(); no hace falta crear una variable en este caso
+    System.out.println(new App().texto);
+    //creamos un objeto de la clase App que es donde esta nuestra variable texto
+    
     	
       }
 }
