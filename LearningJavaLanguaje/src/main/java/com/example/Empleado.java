@@ -2,12 +2,26 @@ package com.example;
 
 import java.time.LocalDate;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import lombok.experimental.SuperBuilder;
+
 /*
  * Empleado hereda de Persona. Es una subclase de Persona. 
  * Persona es la Super Clase de Empleado. 
  * Empleado es tb un Subtipo de Persona.
  * */
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@SuperBuilder
+@EqualsAndHashCode(callSuper = false)
+@ToString(callSuper = true)
+// Considerar solo iguales a quienes tengan los metodos de empleados iguales
 public class Empleado extends Persona {
 
 	/*
@@ -18,8 +32,11 @@ public class Empleado extends Persona {
 	private double salario;
 	private Departamento departamento;
 	private LocalDate fechaAlta;
+	
+	// Número de la Seguridad Social
+	private String ssn;
 
-	public Empleado() {
+	/* public Empleado() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -52,6 +69,6 @@ public class Empleado extends Persona {
 				+ ", getSegundoApellido()=" + getSegundoApellido() + ", getGenero()=" + getGenero()
 				+ ", getFechaNacimiento()=" + getFechaNacimiento() + ", toString()=" + super.toString()
 				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
-	}
+	}*/
 
 }
