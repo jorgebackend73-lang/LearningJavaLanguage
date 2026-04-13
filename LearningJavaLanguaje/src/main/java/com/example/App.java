@@ -1,5 +1,8 @@
 package com.example;
 
+import java.time.LocalDate;
+import java.time.Month;
+
 public class App {
 	
 	//Declaración variables instancia:
@@ -49,6 +52,143 @@ public class App {
 		
 		Integer total3 = 0;
 		
+	/*Podemos hacer commit y no generar nuevas ramas y con BDR en nobre del proyecto
+	 * => teams => show in history y podemos ver todos los commits.
+	 *Podemos acceder a ellos. Pero para modificarlos hay que crear una nueva
+	 *rama temporal y esta una vez hechos los cambios ya se puede volver a 
+	 *hacer commit. 
+	 * 
+	 *https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html
+	 *Array: es un identificador que hace referencia a zonas de la memoria
+	 *consecutivas donde se almacenan elementos del mismo tipo.
+	 *
+	 *Necesita de un indice númerico que empieza en 0. 
+	 *
+	 *Es un objeto que contiene un número fijado de valores de un mismo 
+	 *tipo. No se le pueden agregar más elementos una vez creado. Por tanto 
+	 *es de tamaño fijo. Se pueden modificar sus elementos, pero no se puede
+	 *aumentar, ni disminuir la cantidad de ellos.
+	 *
+	 *Para acceder a los elementos de un Array se utiliza un indice, entre corchetes,
+	 *que se inicia en el valor cero.
+	 *
+	 *Supongamos una aplicación que maneja nombres. Cada nombre una variable sería
+	 *engorroso recorrerlos y darle mantenimiento.  
+	 * 
+	 * */
+	
+	// Sucesión de variables:
+	String nombre1 = "Carolina";
+	String nombre2 = "Jorge";
+	String nombre3 = "Dani";
+	
+	// Array con lo mismo:
+	String[] nombres = {
+			"Carolina", 
+			"Jorge", 
+			"Dani"
+		};
+	
+	// Array numeros enteros primitivo:
+	int[] numeros = {1, 2, 3, 4, 5};
+	
+	// Mostrar por consolaa la cantidad de elementos del array numeros
+	// length es propiedad, cuando Eclispse nos lo sugiere no lleva parentesis a continuación.
+	System.out.println("El array nmeros tiene: " + numeros.length + " elementos.");
+	
+	// Mostrar el primer elemento del array numeros:
+	System.out.println("El primer elemto del array sería: " + numeros[0]);
+	
+	// Numeros y cualquier Array en Java es de tamaño fijo:
+	
+	// Modificar el primer elemento del array:
+	numeros[0] = 100;
+	
+	System.out.println(numeros[0]);
+	
+	
+	// Array reservando en memoria espacio suficiente para todos sus futuros elementos.
+	// En el siguiente caso reservamos espacio para 10 elementos de tipo integer:
+	int[] numeros2 = new int[10];
+	
+	System.out.println("El array numeros2 tiene: " + numeros2.length + " elementos.");
+	System.out.println("El primer elemento del array numeros2 es: " + numeros2[0]);
+	
+	/*
+	 * Creando array de Persona, es decir un array donde cada elemento del array es 
+	 * de un tipo Persona
+	 * 
+	 * */
+	/* 
+	 * Inicializamos las variables y les damos un valor inicial para poder usarlas aquí
+	 * son variables locales y no tienen valor por defecto.
+	 * 
+	 * */
+	Persona persona1 = null;
+	Persona persona2 = null;
+	Persona persona3 = null;
+	Persona persona4 = null;
+	Persona persona5 = null;
+	
+	/*
+	 * Ahora si le metemos a las personas sus caracteristicas o propiedades y metodos.
+	 * */
+	
+	persona1 = Persona.builder()
+			.nombre("Jorge")
+			.primerApellido("Pascual")
+			.segundoApellido("Ramirez")
+			.genero(Genero.HOMBRE)
+			.fechaNacimiento(LocalDate.of(1995, Month.JANUARY, 10))
+			.salario(3500.50)
+			.build();
+	
+	persona2 = Persona.builder()
+			.nombre("Sebastian")
+			.primerApellido("Sanjuanelo")
+			.segundoApellido("Arrieta")
+			.genero(Genero.HOMBRE)
+			.fechaNacimiento(LocalDate.of(2000, Month.DECEMBER, 1))
+			.salario(2450.70)
+			.build();
+	
+	persona3 = Persona.builder()
+			.nombre("Alex Eduardo")
+			.primerApellido("Pilicita")
+			.segundoApellido("Changoluisa")
+			.genero(Genero.HOMBRE)
+			.fechaNacimiento(LocalDate.of(1997, Month.SEPTEMBER, 11))
+			.salario(4800.46)
+			.build();
+	
+	persona4 = Persona.builder()
+			.nombre("Javier")
+			.primerApellido("Jurado")
+			.segundoApellido("Moran")
+			.genero(Genero.HOMBRE)
+			.fechaNacimiento(LocalDate.of(2005, Month.OCTOBER, 25))
+			.salario(4500.50)
+			.build();
+	
+	persona5 = Persona.builder()
+			.nombre("Rodrigo")
+			.primerApellido("Rivero")
+			.segundoApellido("Fernandez")
+			.genero(Genero.HOMBRE)
+			.fechaNacimiento(LocalDate.of(1992, Month.NOVEMBER, 4))
+			.salario(3746.40)
+			.build();
+	
+	
+	Persona[] personas = {
+		persona1,
+		persona2,
+		persona3,
+		persona4,
+		persona5
+			
+	};
+	
 	}
 }
 
