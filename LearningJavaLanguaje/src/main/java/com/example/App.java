@@ -226,8 +226,34 @@ public class App {
 				// y entonces lo imprimimos:
 				System.out.println("El número " + numerosEnteros[i] + " es par.");
 			}
-
+			
 		}
+		
+		/*
+		 * Ejercicio # 3.
+
+		Comitear cambios actuales del proyecto LearningJavaLanguage. Comentario “antes realizar el ejercicio # 3”.
+		Utilizar bucle for mejorado para mostrar los elementos que son impares del array numerosEnteros y contar la cantidad de números impares encontrados. 
+
+		 * */
+
+		System.out.println("- - - - - - - Elementos que son impar del Array Original - - - - - - -");
+				
+				int contador = 0;
+				for (int numeroEntero : numerosEnteros) {
+					if (numeroEntero % 2 != 0) {
+						// si entramos en este bloque (en Java limitado por {})
+						// quiere decir que el elemento del array numerosEnteros es impar
+						// y entonces lo imprimimos:
+						contador++;
+						System.out.println("El número " + numeroEntero + " es impar.");
+					
+						
+					}
+				}
+				System.out.println("El número de impares encontrados es: " + contador);
+		}
+		
 
 	}
-}
+
