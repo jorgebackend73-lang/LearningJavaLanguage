@@ -9,6 +9,9 @@ public class App {
 	private String nombre; //valor por defecto null.
 	private int total; //valor por defecto 0.
 	
+	// Constante (final) para nuestro array de 100 elementos, static para poder usarla en main
+	static final int TOTAL_ELEMENTOS = 100; 
+	
 	public static void main(String[] args) {
 	
 	/*
@@ -167,7 +170,56 @@ public class App {
 			.salario(3746.40)
 			.build()
 			
-	};
+		};
+	
+	/*
+	 * Operadores: 
+	 * 
+	 * Aritmeticos: +, -, *, /, %. 
+	 * 
+	 * % util para saber si un número es par o no.
+	 * 
+	 * Vamos a implementar una sentencia de control de flujo, que no existe en SQL
+	 * for se utiliza para recorrer los elementos de un array, donde se conoce 
+	 * la cantidad de elementos que componen ese array.
+	 * 
+	 * Primero for y luego for mejorado (mal llamado for each).
+	 * 
+	 * Ejemplo:
+	 * 
+	 * 1. Declarar Array de 100 elementos.
+	 * 2. Agrgar valores al array.
+	 * 3. Recorrer array y mostrar solo los valores pares.
+	 * 
+	 * */
+	
+		
+	int[] numerosEnteros = new int[TOTAL_ELEMENTOS];
+	
+	// Recorrer el array numerosEnteros y asinar a cada elemento un valor entre 1 y 100
+	
+	// i nuestra variable de control que ponemos a 0
+	// despues de ; la condición mientras i sea menor o igual a 100 (0 a 99)
+	// La expresión i + 1 simpre la vamos a ver como i++ autoincremento en uno.
+	/* for (int i = 0; i <= TOTAL_ELEMENTOS - 1; i = i + 1) {
+	
+		numerosEnteros[i] = i + 1; 
+		
+		*Cuando el perador esta solo en una sentencia da igual i++ que ++i.
+		*En ambos casos el valor de i se incrementa en 1.
+		*Pero en int resultado = i++ * 5; sera 5 y en int resultado2 = ++i * 5; sera 15.
+		*En ++i primero incrementa el valor de i y luego multiplica por 5.
+		*En i++ primero multiplica el valor por 5 y luego incrementa. 
+		*/
+	
+	for (int i = 0 ; i <= TOTAL_ELEMENTOS - 1; i++) {
+		
+		numerosEnteros[i] = i + 1;
+	
+		
+	}
+	
+	
 	
 	}
 }
