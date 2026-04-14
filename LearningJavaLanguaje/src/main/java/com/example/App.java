@@ -242,15 +242,18 @@ public class App {
 				int contador = 0;
 				for (int numeroEntero : numerosEnteros) {
 					if (numeroEntero % 2 != 0) {
+						// Esta vez hemos usado un for mejorado.
 						// si entramos en este bloque (en Java limitado por {})
 						// quiere decir que el elemento del array numerosEnteros es impar
 						// y entonces lo imprimimos:
 						contador++;
+						// Usamos un contador. No hay que olvidar declararlo antes del bucle for^^.
 						System.out.println("El número " + numeroEntero + " es impar.");
 					
 						
 					}
 				}
+				// Imprimimos la cantidad guardada en contador:
 				System.out.println("El número de impares encontrados es: " + contador);
 		}
 		
