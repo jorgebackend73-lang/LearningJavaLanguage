@@ -297,6 +297,45 @@ public class App {
 		System.out.println("Otro casteo pero con operador compuesto *=" + b);
 		
 		b /= a;
+		
+		
+		/*
+		 * Operador Ternario
+		 * 
+		 * https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op2.html
+		 * 
+		 * Operador que trabaja con tres operandos. Es una alternativa al uso de 
+		 * la sentencia condicional if, y en ocasiones es la única forma posible de 
+		 * solucionar algun problema concreto, por ejemplo cuando se necesita retornar
+		 * un valor en la misma sentencia.
+		 * 
+		 * */
+		
+		String n1 = "Pepe";
+		
+		/*
+		 * Es un if, else en una sola sentencia: si se cumple la condición acontece lo que esta
+		 * a la izquierda de los dos puntos y a la dercha sería el else, vamos, lo que pasa 
+		 * si no se cumple el if.
+		 * */
+		
+		String resultado = (n1.equals("Pepe")) ? 
+				"Si, n1 tiene el valor de Pepe" :
+					"No, n1 no tiene el valor de Pepe";
+		
+		System.out.println(resultado);
+		
+		/*
+		 * La condición del operador ternario no tiene por que ir entre paréntesis,
+		 * y en la condición podemos utilizar muchos operadores condicionales,
+		 * como and => &&, or => ||, not => !, operadores relacionales (<, >, !=, etc., 
+		 * pero el resultado final tiene que ser un booleano
+		 * */
+		
+		int resultado2 = b > a && n1.equals("Pepe") || b > a * 25 && b != 15 ? 10 : 50;
+		
+		System.out.println(resultado2);
+		
 		}
 		
 
