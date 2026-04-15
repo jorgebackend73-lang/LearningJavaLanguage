@@ -255,6 +255,48 @@ public class App {
 				}
 				// Imprimimos la cantidad guardada en contador:
 				System.out.println("El número de impares encontrados es: " + contador);
+		
+		/*
+		 * Sentencias de Asignación Compuesta
+		 * 
+		 * https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html
+		 * 
+		 * */
+				
+		byte a = 10;
+		short b = 10;
+		
+		// tipe casting = amoldamos el tipo de dato al menciondado dentro de los paréntesis.
+		/*La expresión siguiente al evaluarse se promueve a tipo de dato int primitivo. Los valores
+		 * de las variables a y b, dando como resultado un valor de tipo int que no se puede almacenar
+		 * en un tipo short, por lo cual hay que realizar un type casting (casteo) = forzar el tipo de
+		 * dato de un resultado al tipo de dato que queramos y se escribe el tipo de dato forzado
+		 * entere paréntesis.
+		 * 
+		 * b = a + b; esto da un int que no cabe en un short, mal.
+		 * 
+		 * */
+		
+		b = (short)(a + b); // esto fueza el tipo de dato short y se lo traga.
+		
+		System.out.println("Resultado casteado explicitamente: " + b);
+		
+		/*
+		 * Todo lo anterior para decir que debe evitarse esto del casteo.
+		 *
+		 * Deberias usar sentencias de asignación compuesta, para resolver estas situaciones.
+		 * 
+		 * */
+				
+		b += a;
+		
+		System.out.println("Otro casteo pero con operador compuesto +=" + b);
+		
+		b *= a;
+		
+		System.out.println("Otro casteo pero con operador compuesto *=" + b);
+		
+		b /= a;
 		}
 		
 
