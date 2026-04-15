@@ -31,16 +31,21 @@ public class App {
 		 * 
 		 * */
 		
+		/*
+		 * Utilizando los beneficios de Pattern Matching
+		 * */
 		
-		if (object instanceof Empleado) {
+		if (obj instanceof Empleado empleado) {
 			
-			Empleado empleado = (Empleado) object;
+			// Empleado empleado = (Empleado) object; Nos sobra por la declaración de la línea anterior.
+			// Con lo de arriba podemos usar empleado directamente, sin tener que castear y
+			// creando la variable directamente.
 			
 			return "Salario del empleado " + empleado.getSalario();
 			
-		} else if (object instanceof Estudiante) {
+		} else if (obj instanceof Estudiante estudiante) {
 			
-			Estudiante estudiante = (Estudiante) object;
+			// Estudiante estudiante = (Estudiante) object; <= esto que declara y castea sobra.
 			
 			return "Total de asignaturas del estudiante " + estudiante.getTotalAsignaturas() + ".";
 			
