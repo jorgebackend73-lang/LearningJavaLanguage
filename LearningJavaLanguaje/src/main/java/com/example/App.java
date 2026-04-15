@@ -42,11 +42,11 @@ public class App {
 			
 			Estudiante estudiante = (Estudiante) object;
 			
-			return "Total de asignaturas del estudiante " + estudiante.getTotalAsignaturas();
+			return "Total de asignaturas del estudiante " + estudiante.getTotalAsignaturas() + ".";
 			
 		} else {
 			
-			return "No es ni estudiante ni empleado";
+			return "no es, ni estudiante, ni empleado.";
 			
 		}
 		
@@ -93,18 +93,19 @@ public class App {
 		
 		/*
 		 * Invocar metodo printObject:
+		 * 
+		 * Lo hacemos así pq lo que devuelve el metodo String lo podemos
+		 * concatenar con el resultado.
+		 * 
 		 * */
 		
-		String resultado = null;
 		
-		resultado = printObject(p1);
-		System.out.println(resultado);
 		
-		printObject(e1);
-		System.out.println(resultado);
+		System.out.println("El resultado " + printObject(p1));
 		
-		printObject(emp1);
-		System.out.println(resultado);
+		System.out.println(printObject(e1));
+		
+		System.out.println(printObject(emp1));
 		
 		}
 	
