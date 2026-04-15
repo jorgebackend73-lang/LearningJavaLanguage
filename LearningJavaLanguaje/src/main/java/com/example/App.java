@@ -6,7 +6,15 @@ import java.time.Month;
 public class App {
 	
 	// como lo de abajo es estatic puede vivir en esta zona de la clase.
-	static void printObject(Object object) {
+	// cambiamos void por String y nos sobran los println: tenemos que
+	// sustituirlos por return.
+	/*
+	 * Así nos devuelve directamente el metodo, pero además del los return
+	 * necesitamos printlns para imprimir los returns. Además tenemos que
+	 * declarar la variable resultado que es la que imprimimos 
+	 * */
+	
+	static String printObject(Object object) {
 		
 		/*
 		 * Rcibe como parametro un object y en dependencia del tipo de
@@ -28,17 +36,17 @@ public class App {
 			
 			Empleado empleado = (Empleado) object;
 			
-			System.out.println("Salario del empleado " + empleado.getSalario());
+			return "Salario del empleado " + empleado.getSalario();
 			
 		} else if (object instanceof Estudiante) {
 			
 			Estudiante estudiante = (Estudiante) object;
 			
-			System.out.println("Total de asignaturas del estudiante " + estudiante.getTotalAsignaturas());
+			return "Total de asignaturas del estudiante " + estudiante.getTotalAsignaturas();
 			
 		} else {
 			
-			System.out.println("No es ni estudiante ni empleado");
+			return "No es ni estudiante ni empleado";
 			
 		}
 		
@@ -87,9 +95,16 @@ public class App {
 		 * Invocar metodo printObject:
 		 * */
 		
-		printObject(p1);
+		String resultado = null;
+		
+		resultado = printObject(p1);
+		System.out.println(resultado);
+		
 		printObject(e1);
+		System.out.println(resultado);
+		
 		printObject(emp1);
+		System.out.println(resultado);
 		
 		}
 	
