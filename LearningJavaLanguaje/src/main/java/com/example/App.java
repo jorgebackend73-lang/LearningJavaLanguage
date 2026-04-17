@@ -14,7 +14,7 @@ public class App {
 	 * declarar la variable resultado que es la que imprimimos 
 	 * */
 	
-	static String printObject(Object object) {
+	static String printObject(Object obj) {
 		
 		/*
 		 * Rcibe como parametro un object y en dependencia del tipo de
@@ -111,8 +111,135 @@ public class App {
 		System.out.println(printObject(e1));
 		
 		System.out.println(printObject(emp1));
+	
+		/*
+		 * Ejercicio Pattern Matching
+		 * 
+		 * 1 - Crear un array de Objetos y agregarle elementos de tipo Empleado y
+		 * Estudiante. tres empleados (dos hombres y una mujer) y tres estudiantes, 
+		 * con todas las propiedades de Persona en ambos casos.
+		 * 
+		 * 2 - Recorrer o iterar el array utilizando una sentencia for mejorado
+		 * y para los estudiantes obtener la media de las asignaturas matriculadas.
+		 * Para los empleados obtener el salario medio de los empleados de genero
+		 * Hombre.
+		 * 
+		 * Se sugiere emplear Pattern Matching en el momento de iterar el array.
+		 * 
+		 * */
 		
+		/* Object[] objetos = {} */
+
+		Object[] objects = {
+		
+				Empleado.builder()
+					.nombre("Jorge")
+					.primerApellido("Pascual")
+					.segundoApellido("Ramirez")
+					.genero(Genero.HOMBRE)
+					.fechaNacimiento(LocalDate.of(1995, Month.JANUARY, 10))
+					.salario(3420.23)
+					.departamento(Departamento.FINANZAS)
+					.fechaAlta(LocalDate.of(2020, Month.JANUARY, 1))
+					.ssn("123-45-6789")
+					.build(),
+
+				Empleado.builder()
+		            .nombre("Sebastian")
+		            .primerApellido("Sanjuanelo")
+		            .segundoApellido("Arrieta")
+		            .genero(Genero.HOMBRE)
+		            .fechaNacimiento(LocalDate.of(2000, Month.DECEMBER, 1))
+		            .salario(1800)
+		            .departamento(Departamento.CONTABILIDAD)
+		            .fechaAlta(LocalDate.of(2021, Month.MARCH, 15))
+		            .ssn("987-65-4321")
+		            .build(),
+
+		        Empleado.builder()
+		            .nombre("Alexa")
+		            .primerApellido("Comas")
+		            .segundoApellido("Puntos")
+		            .genero(Genero.MUJER)
+		            .fechaNacimiento(LocalDate.of(1997, Month.SEPTEMBER, 11))
+		            .salario(2200)
+		            .departamento(Departamento.RRHH)
+		            .fechaAlta(LocalDate.of(2019, Month.JUNE, 10))
+		            .ssn("555-11-2222")
+		            .build(),
+
+		        Estudiante.builder()
+		            .nombre("Javier")
+		            .primerApellido("Jurado")
+		            .segundoApellido("Moran")
+		            .genero(Genero.HOMBRE)
+		            .fechaNacimiento(LocalDate.of(2005, Month.OCTOBER, 25))
+		            .totalAsignaturas(3)
+		            .facultad(Facultad.LETRAS)
+		            .build(),
+
+		        Estudiante.builder()
+		            .nombre("Rodrigo")
+		            .primerApellido("Rivero")
+		            .segundoApellido("Fernandez")
+		            .genero(Genero.HOMBRE)
+		            .fechaNacimiento(LocalDate.of(1992, Month.NOVEMBER, 4))
+		            .totalAsignaturas(5)
+		            .facultad(Facultad.INFORMATICA)
+		            .build(),
+
+		        Estudiante.builder()
+		            .nombre("Sese")
+		            .primerApellido("Rodriguez")
+		            .segundoApellido("Perez")
+		            .genero(Genero.HOMBRE)
+		            .fechaNacimiento(LocalDate.of(2000, Month.DECEMBER, 1))
+		            .totalAsignaturas(7)
+		            .facultad(Facultad.BIOLOGÍA)
+		            .build()
+		    };
+		
+		int totalAsignaturas = 0;
+		int contadorEstudiantes = 0;
+
+		double totalSalariosHombres = 0;
+		int contadorEmpleadosHombres = 0;
+
+		for (Object o : objects) {
+
+		    if (o instanceof Estudiante e) {
+		        totalAsignaturas += e.getTotalAsignaturas();
+		        contadorEstudiantes++;
+
+		    } else if (o instanceof Empleado emp) {
+		        if (emp.getGenero().equals(Genero.HOMBRE)) {
+		            totalSalariosHombres += emp.getSalario();
+		            contadorEmpleadosHombres++;
+		        }
+		    }
 		}
+
+		double mediaAsignaturas = (contadorEstudiantes > 0)
+		        ? (double) totalAsignaturas / contadorEstudiantes
+		        : 0;
+
+		double mediaSalariosHombres = (contadorEmpleadosHombres > 0)
+		        ? totalSalariosHombres / contadorEmpleadosHombres
+		        : 0;
+
+		System.out.println("Media de asignaturas de estudiantes: " + mediaAsignaturas);
+		System.out.println("Media salarial de empleados hombres: " + mediaSalariosHombres);
+
+		
+	}
+					
+					
+					
+					
+				
+					
+				
+		
 	
 }
 
